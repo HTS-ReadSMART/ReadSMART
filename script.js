@@ -2560,8 +2560,16 @@ menuLogout.addEventListener('click', () => {
 });
 
 // Hamburger and menu actions (No change)
-hamburger.addEventListener('click', () => {
-    hamburgerMenu.style.display = hamburgerMenu.style.display === 'flex' ? 'none' : 'flex';
+  hamburger.addEventListener('click', () => {
+    // Get the currently rendered style, which accounts for CSS rules
+    const currentDisplay = window.getComputedStyle(hamburgerMenu).display;
+
+    // Check if the current display is 'none' (hidden)
+    if (currentDisplay === 'none' || hamburgerMenu.style.display === 'none' || hamburgerMenu.style.display === '') {
+        hamburgerMenu.style.display = 'flex';
+    } else {
+        hamburgerMenu.style.display = 'none';
+    }
 });
 
 if (menuProfileBtn) {
