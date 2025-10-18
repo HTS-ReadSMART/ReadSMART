@@ -1224,6 +1224,9 @@ body {
     background-color: #B3E5FC; /* Example: Pastel Light Blue */
     /* background-color: #C8E6C9; /* Alternative: Pastel Mint Green */
     /* background-color: #FFCDD2; /* Alternative: Pastel Pink */
+position: relative; /* z-index requires a position other than static */
+    z-index: 100;      /* Make this very high to ensure it's on top */
+}
 
     border: none;
     cursor: pointer;
@@ -1240,4 +1243,13 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+}
+.welcome-message {
+    /* Existing styles, like font-size, margin... */
+    
+    white-space: nowrap;      /* Prevents line wrapping */
+    overflow: hidden;         /* Hides any text that overflows */
+    text-overflow: ellipsis;  /* Adds '...' if the text is too long */
+    max-width: 120px;         /* CRITICAL: Limits the width of the text area */
+    margin-right: 10px;       /* Ensures space between text and button */
 }
