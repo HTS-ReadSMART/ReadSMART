@@ -2563,7 +2563,11 @@ menuLogout.addEventListener('click', () => {
   const hamburger = document.getElementById('hamburger');
 const hamburgerMenu = document.getElementById('hamburger-menu');
   
-  hamburger.addEventListener('click', () => {
+hamburger.addEventListener('click', () => {
+    // CRITICAL FIX: Use classList.toggle to switch between display: none and display: flex
+    hamburgerMenu.classList.toggle('active');
+});
+  
     // Get the currently rendered style, which accounts for CSS rules
     const currentDisplay = window.getComputedStyle(hamburgerMenu).display;
 
