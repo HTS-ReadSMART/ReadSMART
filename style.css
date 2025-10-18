@@ -1253,3 +1253,31 @@ position: relative; /* z-index requires a position other than static */
     max-width: 120px;         /* CRITICAL: Limits the width of the text area */
     margin-right: 10px;       /* Ensures space between text and button */
 }
+
+/* In style.css */
+
+#hamburger-menu {
+    position: absolute; /* Ensures the menu can float over content */
+    top: 100%;          /* Positions the menu right below the header */
+    right: 0;           /* Aligns the menu to the right side of the screen */
+    
+    /* VISIBILITY CONTROL */
+    display: none;      /* CRITICAL: Default state is hidden */
+    
+    /* Appearance styles (Keep your existing styles if you like them) */
+    width: 250px;
+    background: var(--panel-bg);
+    box-shadow: var(--shadow);
+    border-radius: 8px;
+    padding: 10px 0;
+    z-index: 999; /* Ensure it is below the button but above everything else */
+    
+    /* Optional: Add a subtle border */
+    border: 1px solid var(--border-color);
+}
+
+/* Add the .active class to make it visible when the button is clicked */
+#hamburger-menu.active {
+    display: flex; /* Or 'block', depending on your internal menu structure */
+    flex-direction: column;
+}
