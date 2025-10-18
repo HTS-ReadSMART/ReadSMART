@@ -2560,6 +2560,9 @@ menuLogout.addEventListener('click', () => {
 });
 
 // Hamburger and menu actions (No change)
+  const hamburger = document.getElementById('hamburger');
+const hamburgerMenu = document.getElementById('hamburger-menu');
+  
   hamburger.addEventListener('click', () => {
     // Get the currently rendered style, which accounts for CSS rules
     const currentDisplay = window.getComputedStyle(hamburgerMenu).display;
